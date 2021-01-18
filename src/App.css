@@ -1,38 +1,586 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'Roboto';
+  src: './fonts/Roboto/RobotoRegular.ttf';
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html body {
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+:root {
+  --primary-color: #4458dc;
+  --primary-color2: #854fee;
+  --title-color: #141313;
+  --text-color: #777777;
+  --border-color: #201f1f17;
+  --gradient-color: linear-gradient(90deg, #4458dc 0%, #854fee 100%);
+  --shadow-color: 0px 10px 30px rgba(118, 85, 225, 0.3);
+  --box-shodow: 0px 10px 30px rgba(57, 56, 61, 0.205);
+
+  --roboto: 'Roboto', cursive;
+  --roboto-normal: 'Roboto';
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* global */
+
+.title-text {
+  font: normal bold 50px/72px var(--roboto);
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.button {
+  padding: 0.8rem 2.2rem;
+  font: normal 500 16px/20px var(--roboto);
+  position: relative;
+  border: 3px solid black;
+  border-radius: 4px;
+}
+
+.button.primary-button {
+  background: var(--gradient-color);
+  background-clip: padding-box;
+  color: whitesmoke;
+  transition: ease 0.6s;
+  box-shadow: var(--box-shodow);
+}
+
+.button.primary-button:hover {
+  background: whitesmoke;
+  background-clip: padding-box;
+  color: black;
+}
+
+.button.primary-button::after, .button.secondary-button::after {
+  position: absolute;
+  top: -2px; left: -2px;
+  bottom: -2px; right: -2px;
+  background: var(--gradient-color);
+  content: '';
+  z-index: -1;
+  border-radius: 4px;
+}
+
+.button.secondary-button {
+  background: white;
+  background-clip: padding-box;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+
+}
+
+.button.secondary-button:hover {
+  background: var(--gradient-color);
+  color: whitesmoke;
+  box-shadow: var(--box-shodow);
+}
+
+p.para {
+  color: var(--text-color);
+  font: normal 500 20px/ 26px var(--roboto-normal);
+}
+
+.font-roboto {
+  font-family: var(--roboto);
+}
+
+.dn {
+  display: none!important;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: whitesmoke;
+  box-shadow: var(--box-shodow)
+}
+
+/* global */
+
+
+/* start navigation*/
+
+.header_area .main-menu .navbar .navbar-brand {
+  padding: 0.2rem 0.5rem;
+}
+
+.header_area .main-menu .navbar {
+  padding: 1rem 20rem;
+}
+
+.header_area .main-menu .nav-item .nav-link {
+  font: normal 500 15px/2px var(--roboto);
+  text-transform: uppercase;
+  padding: 1.7rem;
+  color: var(--title-color);
+}
+
+.header_area .main-menu .navbar-nav .active a {
+  background: var(--gradient-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header_area .main-menu .navbar-nav a:hover {
+  background: var(--gradient-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
+
+
+/* end navigation*/
+
+/*Banner Area*/
+
+.site-main .site-banner {
+  background: url('./img/banner/home-banner.png')
+}
+
+.site-main .site-banner .site-title h3 {
+  padding-top: 35%;
+  font-weight: 500;
+}
+
+.site-main .site-banner .site-title h3::after {
+  content: '';
+  height: 2px;
+  width: 18vw;
+  background: black;
+  display: inline-block;
+  margin-left: 5%;
+  transform: translateY(-10px);
+}
+
+.site-main .site-banner .site-title h1 {
+  font-size: 5rem;
+}
+
+.site-main .site-banner .site-title h4 {
+  font-size: 1.5rem;
+}
+
+.site-main .site-banner .banner-image>img {
+  padding: 7rem 0;
+  width: 90rem;
+}
+
+/*End Banner Area*/
+
+
+
+
+/* Start About Area */
+
+.site-main .about-area {
+  padding: 8rem 5rem;
+}
+
+.site-main .about-area .about-title h2>span {
+  display: block;
+  font: normal bold 49px/ 60px var(--roboto);
+  letter-spacing: 21px;
+}
+
+.site-main .about-area .about-title .paragraph>p {
+  padding: .4rem 0;
+}
+
+/* End About Area */
+
+
+
+
+/* Start Brand Area */
+
+.site-main .brand-area {
+  padding: 1rem 20rem;
+  margin-bottom: 4rem;
+}
+
+.site-main .brand-area .first-row .col-lg-4 {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.site-main .brand-area .first-row .col-lg-4>.single-brand {
+  border: 1px solid var(--border-color);
+  text-align: center;
+  padding: 1.8rem 0rem;
+  margin: .9rem 0;
+  width: 180px;
+  height: 100px;
+  cursor: pointer;
+  transition: transform .4s ease;
+}
+
+.site-main .brand-area .first-row .col-lg-4>.single-brand>img {
+  width: 50%;
+}
+
+.site-main .brand-area .first-row .col-lg-4>.single-brand:hover {
+  box-shadow: var(--box-shodow);
+  transform: scale(1.1);
+}
+
+.site-main .brand-area .first-row .col-lg-4>.single-brand:hover>img {
+  filter: brightness(0.15);
+}
+
+.site-main .brand-area .experience-area {
+  padding-left: 1rem;
+}
+
+.site-main .brand-area .experience-area span {
+  display: block;
+}
+
+.site-main .brand-area .experience-area .years-area {
+  background: url(./img/client-info-bg.png) no-repeat 45px 20px;
+  padding: 2rem 0;
+  width: 40rem;
+  height: 18rem;
+  padding-left: 8rem;
+  position: relative;
+}
+
+.site-main .brand-area .experience-area .bg-panel {
+  position: absolute;
+  left: -190px; top: 0%;
+  background: #e029290a;
+  width: 400px;
+  height: 400px;
+  margin-left: 340px;
+  z-index: -1;
+}
+
+.site-main .brand-area .experience-area .years-area .years {
+  font: normal bold 84px/ 40px var(--roboto-normal);
+  color: var(--primary-color2);
+  z-index: 2;
+}
+
+.site-main .brand-area .experience-area .years-area .years h2>span {
+  font: normal 600 22px/ 30px var(--roboto);
+}
+
+.site-main .brand-area .experience-area .call-area {
+  padding-left: 10rem;
+}
+
+/* .open {
+  animation: page-open 3s forwards ease;
+}
+
+@keyframes page-open {
+  0%{transform: rotateY(0deg)}
+  95%{transform: rotateY(-90deg)}
+  100%{display: none!important;}
+} */
+/* End Brand Area */
+
+
+
+/* Start Services Area */
+
+.site-main .services-area {
+  padding: 7rem 2rem;
+}
+
+.site-main .services-area .services-title {
+  padding: 0 14rem;
+}
+
+.site-main .services-area .services-title h1 {
+  font-size: 35px;
+}
+
+.site-main>.services-area .services {
+  background: rgba(248, 252, 253, 0.973);
+  padding: 2rem 0;
+  width: 16rem;
+  margin: 5rem .5rem;
+  transition-property: box-shadow;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+}
+
+.site-main>.services-area .services:hover {
+  box-shadow: 1px 10px 10px rgba(0,0,0,0.5);
+}
+
+
+
+/* End Services Area */
+
+/* Project Area */
+
+.site-main .project-area {
+  padding: 4rem 0;
+}
+
+.site-main .project-area .button-group button {
+  margin-bottom: 3rem;
+}
+
+.site-main .project-area .button-group button + button {
+  padding-left: 3rem;
+  margin-left: 1rem;
+}
+
+.site-main .project-area .grid .our-project > .title h4 {
+  font: normal 700 25px/12px var(--roboto-normal);
+}
+
+.site-main .project-area .grid .our-project > .title span {
+  text-transform: capitalize;
+}
+
+.site-main .project-area .grid .element-item:hover {
+  animation: zoom 1s ease;
+  animation-fill-mode: both;
+  z-index: 10;
+}
+
+ .element-item {
+  animation-name: blur;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+}
+
+@keyframes blur {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes zoom {
+  0% {transform: scale(1)}
+  100% {transform: scale(1.2)}
+}
+
+
+/* End Project Area */
+
+
+
+
+
+/* Contact Area */
+
+
+.site-main .contact-me-area .contact {
+  background: url(./img/subscribe-bg.png);
+  background-size: cover;
+  padding: 11rem 0;
+  margin: 3rem auto;
+}
+
+.site-main .contact-me-area .contact .contact-title h4 {
+  font: normal 700 30px/30px var(--roboto);
+  color: whitesmoke;
+  margin-bottom: 5rem;
+}
+
+.site-main .contact-me-area .contact .social {
+  height: 3.4rem;
+}
+
+
+.site-main .contact-me-area .contact .social .link>i {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.site-main .contact-me-area .contact .social .link .inst:hover {
+  box-shadow: 0px 0px 20px 8px rgba(0,0,0,0.5)!important;
+  border-radius: 30%!important;
+  overflow: hidden!important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.site-main .contact-me-area .contact .social .link>i:hover {
+  box-shadow: 0px 0px 20px 8px rgba(0,0,0,0.5);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.site-main .contact-me-area .contact .mail {
+  margin: 1rem 0;
+}
+
+.site-main .contact-me-area .contact .mail .mail-text {
+  font: normal 400 22px/10px var(--roboto);
+  color: whitesmoke;
+}
+
+
+/* End Contact Area */
+
+/* Footer Area */
+
+footer.footer-area {
+  padding: 5rem 0 0 0;
+  background: url(./img/footer-bg.png) no-repeat;
+}
+
+footer.footer-area .copyrights>p {
+  font: normal 400 15px/10px var(--roboto)
+}
+
+/* End Footer Area */
+
+/* responsive */
+
+@media only screen and (max-width: 340px){
+  .header_area .main-menu .navbar,
+  .header_area .main-menu .navbar .navbar-brand,
+  .site-main .contact-me-area .contact .contact-title,
+  .site-main .contact-me-area .contact .contact-title p, h4,
+  .site-main .services-area,
+  .site-main .contact-me-area .contact
+  {
+      padding: 2%;
+      margin: 0%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .site-main .site-banner .site-title h1{
+      font-size: 41px;
+  }
+
+  .site-main .contact-me-area .contact form .input-textbox input{
+      width: 15rem!important;
+  }
+
+  .site-main > contact-area .services{
+      width: 13rem;
+  }
+
+  .site-main .project-area .grid .our-project .img>img {
+    max-width: 100%;
+  }
+
+  .site-main>.services-area .services {
+    max-width: 100%;
+    margin: 1rem 0;
+  }
+
+}
+
+
+/* if the viewport is equal to 340px or less than that */ 
+@media only screen and (max-width: 792px){
+  .site-main .about-area .about-title h2 > span{
+      font-size: 31px;
+      letter-spacing: 10px;
+  }
+
+  .site-main .brand-area .experience-area .years-area{
+      padding-left: 1%;
+      width: 49%;
+  }
+
+  .site-main .brand-area .experience-area .bg-panel{
+      margin-left: 30%;
+      width: 80%;   
+  }
+
+  .site-main .brand-area .experience-area .call-area{
+      padding-left: 3%;
+  }
+
+  .site-main .project-area .button-group button{
+      font: normal 500 18px/40px var(--roboto);
+  }
+
+  .site-main .about-area .about-title p{
+      padding: 0%;
+  }
+
+  .site-main .contact-us-area .contact form .input-textbox input{
+      width: 20rem;
+      margin: 5%;
+  }
+
+  .site-main .project-area .grid .our-project .img>img {
+    max-width: 100%;
+  }
+
+  .site-main>.services-area .services {
+    max-width: 100%;
+    margin: 1rem 0;
+  }
+
+  .site-main .project-area .button-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .site-main .project-area .button-group>button {
+    font-size: 10px;
+    padding: 1rem 1rem!important;
+    line-height: 0!important;
+    margin: 1rem 0!important;
+  }
+
+  .button.primary-button {
+    background: var(--gradient-color)!important;
+    background-clip: padding-box!important;
+    color: whitesmoke!important;
+    transition: ease 0.6s!important;
+    box-shadow: var(--box-shodow)!important;
+}
+  .site-main .contact-me-area .contact {
+    display: none;
   }
 }
+
+@media (max-width: 1040px) {
+  .site-main>.services-area .services {
+    background: rgba(248, 252, 253, 0.973);
+    padding: 2rem 0;
+    /* width: 16rem; */
+    /* margin: 5rem .5rem; */
+    max-width: 100%;
+    transition-property: box-shadow;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+  }
+  
+  .site-main .project-area .grid .our-project .img>img {
+    max-width: 100%;
+  }
+
+}
+
+
+
+/* if the viewport is equal to 1910px or less than that */ 
+@media only screen and (max-width: 1910px){
+  .header_area .main-menu .navbar{
+      padding: 1rem;
+  }
+
+  .container{
+      max-width: 90%;
+  }
+
+  .site-main .brand-area,
+  .site-main .services-area .services-title,
+  .site-main .about-area{
+      padding: 3% 4%;
+  }
+
+
+}
+  /* .site-main .site-banner .site-title h1 {
+    font-size: 15rem;
+  } */
