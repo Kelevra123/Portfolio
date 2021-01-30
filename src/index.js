@@ -3,10 +3,31 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {createStore, combineReducers,applyMiddleware} from 'redux';
+import { Provider } from 'react-redux';
+import ReduxThunk from 'redux-thunk'
+import portfolioReducer from "./store/reducers/portfolioReducer";
+import authReducer from "./store/reducers/authReducer";
+import { CookiesProvider } from 'react-cookie'
+
+const rootReducer = combineReducers({
+    portf: portfolioReducer,
+    auth: authReducer
+})
+
+const store = createStore(rootReducer, applyMiddleware(ReduxThunk))
+
+
+
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <Provider store={store}>
+          <CookiesProvider>
+            <App />
+          </CookiesProvider>
+      </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -7,7 +7,7 @@ export default function AboutArea() {
             <div className='row'>
                 <div className='col-lg-6 col-md-12'>
                     <div className='about-image'>
-                        <img className='img-fluid' src={window.location.origin + '/img/about-us.png'} alt='About us'></img>
+                        <img className='img-fluid' src='../img/about-us.png' alt='About us'/>
                     </div>
                 </div>
                 <div className='col-lg-6 col-md-12 about-title'>

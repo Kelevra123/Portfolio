@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Roboto';
-  src: './fonts/Roboto/RobotoRegular.ttf';
+  /*src: './fonts/Roboto/RobotoRegular.ttf';*/
 }
 
 html body {
@@ -126,14 +126,14 @@ p.para {
   background: var(--gradient-color);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
+  /*background-clip: text;*/
 }
 
 .header_area .main-menu .navbar-nav a:hover {
   background: var(--gradient-color);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
+  /*background-clip: text;*/
 }
 
 
@@ -144,7 +144,7 @@ p.para {
 /*Banner Area*/
 
 .site-main .site-banner {
-  background: url('./img/banner/home-banner.png')
+  background: url("./img/banner/home-banner.png");
 }
 
 .site-main .site-banner .site-title h3 {
@@ -216,7 +216,7 @@ p.para {
 .site-main .brand-area .first-row .col-lg-4>.single-brand {
   border: 1px solid var(--border-color);
   text-align: center;
-  padding: 1.8rem 0rem;
+  padding: 1.8rem 0;
   margin: .9rem 0;
   width: 180px;
   height: 100px;
@@ -247,16 +247,15 @@ p.para {
 
 .site-main .brand-area .experience-area .years-area {
   background: url(./img/client-info-bg.png) no-repeat 45px 20px;
-  padding: 2rem 0;
+  padding: 2rem 0 0 8rem;
   width: 40rem;
   height: 18rem;
-  padding-left: 8rem;
   position: relative;
 }
 
 .site-main .brand-area .experience-area .bg-panel {
   position: absolute;
-  left: -190px; top: 0%;
+  left: -190px; top: 0;
   background: #e029290a;
   width: 400px;
   height: 400px;
@@ -350,6 +349,7 @@ p.para {
   animation: zoom 1s ease;
   animation-fill-mode: both;
   z-index: 10;
+  cursor: pointer;
 }
 
  .element-item {
@@ -401,13 +401,13 @@ p.para {
 }
 
 .site-main .contact-me-area .contact .social .link .inst:hover {
-  box-shadow: 0px 0px 20px 8px rgba(0,0,0,0.5)!important;
+  box-shadow: 0 0 20px 8px rgba(0,0,0,0.5)!important;
   border-radius: 30%!important;
   overflow: hidden!important;
 }
 
 .site-main .contact-me-area .contact .social .link>i:hover {
-  box-shadow: 0px 0px 20px 8px rgba(0,0,0,0.5);
+  box-shadow: 0 0 20px 8px rgba(0,0,0,0.5);
   border-radius: 50%;
   overflow: hidden;
 }
@@ -448,7 +448,7 @@ footer.footer-area .copyrights>p {
   .site-main .contact-me-area .contact
   {
       padding: 2%;
-      margin: 0%;
+      margin: 0;
   }
 
   .site-main .site-banner .site-title h1{
@@ -459,9 +459,9 @@ footer.footer-area .copyrights>p {
       width: 15rem!important;
   }
 
-  .site-main > contact-area .services{
-      width: 13rem;
-  }
+  /*.site-main > contact-area .services{*/
+  /*    width: 13rem;*/
+  /*}*/
 
   .site-main .project-area .grid .our-project .img>img {
     max-width: 100%;
@@ -501,7 +501,7 @@ footer.footer-area .copyrights>p {
   }
 
   .site-main .about-area .about-title p{
-      padding: 0%;
+      padding: 0;
   }
 
   .site-main .contact-us-area .contact form .input-textbox input{
@@ -581,6 +581,31 @@ footer.footer-area .copyrights>p {
 
 
 }
+
+.admin__label {
+  width: 5rem;
+}
+.erer {
+  width: 60%;
+}
+.admin__input {
+  width: 90%;
+}
+
+.project-title__area {
+  background: var(--gradient-color);
+}
+.project__img {
+  max-height: 20rem;
+}
+.asss {
+  box-shadow: 1px 10px 10px rgba(0,0,0,0.5);
+}
+/*.project-item__flex-container {*/
+/*  flex-direction: column;*/
+/*  flex-wrap: wrap;*/
+/*  max-height: 3000px;*/
+/*}*/
   /* .site-main .site-banner .site-title h1 {
     font-size: 15rem;
   } */

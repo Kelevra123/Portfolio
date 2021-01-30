@@ -10,7 +10,7 @@ export default function ServicesArea() {
                 <div key={item.alt} className='col-lg-3 col-md-6 col-sm-12'>
                         <div className='services'>
                             <div className='sevices-img text-center py-4'>
-                                <img src={item.img} alt={item.alt}></img>
+                                <img src={item.img} alt={item.alt}/>
                             </div>
                             <div className='card-body text-center'>
                                 <h5 className='card-title text-uppercase font-roboto'>

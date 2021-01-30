@@ -8,8 +8,7 @@ export default function BrandArea() {
             return (
                 <div key={item.alt} className='col-lg-4 col-md-6 col-sm-6 col-sm-12 col-12'>
                             <div className='single-brand'>
-                                <img 
-                                src={item.img} alt={item.alt}></img>
+                                <img src={item.img} alt={item.alt}/>
                             </div>
                         </div>
             )
@@ -46,7 +45,7 @@ export default function BrandArea() {
                                 <span className='font-roboto py-2'>(+38)-099-975-56-67</span>
                             </div>
                         </div> */}
-                        <div className='bg-panel'></div>
+                        <div className='bg-panel'/>
                     </div>
                 </div>
             </div>
