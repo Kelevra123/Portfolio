@@ -17,7 +17,7 @@ export default function ServicesArea() {
                                     {item.title}
                                 </h5>
                                 <p className='card-text text-secondary'>
-                                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old
+                                    {item.descr}
                                 </p>
                             </div>
                         </div>
@@ -35,10 +35,10 @@ export default function ServicesArea() {
             <div className='row'>
                 <div className='col-lg-12 text-center services-title'>
                     <h1 className='text-uppercase title-text'>
-                        Services Offers
+                        Why should you hire me?
                     </h1>
                     <p className='para'>
-                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                        Mainly because I am a responsible, executive, communicative guy at the very dawn of strength, and also:
                     </p>
                 </div>
             </div>

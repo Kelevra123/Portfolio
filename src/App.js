@@ -45,7 +45,7 @@ function App() {
         if (auth) {
             const timer = setTimeout(() => {
                 authOff(timer)
-            }, cookies.expirationTime)
+            }, 3600000)
         }
     })
 

@@ -27,7 +27,7 @@ const AdminEditPage = () => {
             <AdminHeader/>
                 <div className="container">
                     <div className="row justify-content-center">
-                        <div className="d-flex flex-column justify-content-center erer">
+                        <div className="d-flex flex-column justify-content-center admin__container">
                             <AdminButtons
                                 category={category}
                                 setCategory={setCategory}

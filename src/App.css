@@ -20,7 +20,7 @@ html body {
   --shadow-color: 0px 10px 30px rgba(118, 85, 225, 0.3);
   --box-shodow: 0px 10px 30px rgba(57, 56, 61, 0.205);
 
-  --roboto: 'Roboto', cursive;
+  --roboto: 'Roboto';
   --roboto-normal: 'Roboto';
 }
 
@@ -97,8 +97,8 @@ p.para {
   position: fixed;
   top: 0;
   width: 100%;
+  background: white;
   z-index: 100;
-  background: whitesmoke;
   box-shadow: var(--box-shodow)
 }
 
@@ -585,21 +585,41 @@ footer.footer-area .copyrights>p {
 .admin__label {
   width: 5rem;
 }
-.erer {
+.admin__container {
   width: 60%;
 }
 .admin__input {
   width: 90%;
 }
 
-.project-title__area {
-  background: var(--gradient-color);
-}
+
 .project__img {
   max-height: 20rem;
 }
-.asss {
+.card-img__shadow {
   box-shadow: 1px 10px 10px rgba(0,0,0,0.5);
+}
+.para-textarea {
+  font: bold 500 20px/ 26px var(--roboto-normal);
+  font-weight: bold;
+  white-space: pre-wrap;
+  margin-left: 5rem;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 720px) {
+  .para-textarea {
+    margin-left: 0;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 350px ){
+  .para-textarea {
+    margin-left: 0;
+    font-size: 0.6rem;
+    white-space: pre-line;
+  }
 }
 /*.project-item__flex-container {*/
 /*  flex-direction: column;*/

@@ -1,49 +1,13 @@
 import React, {useState, useEffect} from "react"
 import {useLocation} from "react-router-dom";
-
-const View = ({project, setImg}) => {
-    let content
-    const sizeCheck = project.img1.filter(img => img.length !== '' && img.trim())
-    let imgClass = 'col-lg-12 my-4 text-center px-2'
-    if (sizeCheck.length < 4) {
-        imgClass = 'col-lg-4 my-4 text-center px-2'
-    }
-    if (sizeCheck.length > 3 && sizeCheck.length < 6) {
-        imgClass = 'col-lg-2 my-4 text-center px-2'
-    }
-    if (sizeCheck.length === 6) {
-        imgClass = 'col-lg-3 my-4 text-center mx-2'
-    }
-    if (sizeCheck.length > 6) {
-        imgClass = 'col-lg-3 my-4 text-center mx-2 px-2'
-    }
-    if (sizeCheck.length > 8) {
-        imgClass = 'col-lg-2 my-4 text-center px-2'
-    }
-    content = project.img1.map(item => {
-
-        if (item !== '' && item.trim) {
-            return  (
-                <div key={item + Math.random()} className={imgClass}>
-                    <img
-                        src={item} alt="..."
-                        className="img-fluid project-item__img asss"
-                        onClick={(e) => setImg(e)}
-                    />
-                </div>
-            )
-        }
-        return content
-    })
-        return content
-}
+import CardsView from "../ui/CardsView";
 
 const Header = ({project}) => {
     return (
-        <div className='title text-center text-white project-title__area'>
-            <h1 className='title-text'>{project.title}</h1>
-            <h6 className='title-text__category text-uppercase'>{project.category}</h6>
-            <p className='para my-4 text-white'>{project.descr}</p>
+        <div className='title project-title__area'>
+            <h1 className='title-text text-white text-center bg-dark'>{project.title}</h1>
+            <h6 className='title-text__category text-white text-uppercase bg-dark text-center'>{project.category}</h6>
+            <p className='para-textarea text-dark my-4 text-start'>{project.descr}</p>
         </div>
     )
 }
@@ -84,7 +48,7 @@ const PortfolioPage = () => {
             chosen ?
                 <ChosenImg setImg={(e) => setImg(e)} img={variable}/>
                 :
-                <View setImg={(e) => setImg(e)} project={project}/>
+                <CardsView setImg={(e) => setImg(e)} project={project.img1}/>
         )
     }
 

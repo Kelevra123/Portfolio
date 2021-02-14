@@ -1,33 +1,18 @@
 import React from 'react'
+import CardsView from "../../ui/CardsView";
 
 const AdminPreview = ({preview}) => {
 
     const {title, descr, img1} = preview
 
-    const view = (arr) => {
-        let items
-        items = arr.map(item => {
-            if (item !== '' && item.trim()){
-                return (
-                    <div key={Math.random()} className="col-lg-4 my-2">
-                        <img src={item} alt="Check your url" className="img-fluid"/>
-                    </div>
-                )
-            } else {
-                return items
-            }
-        })
-        return items
-    }
-
-    const content = view(img1)
-
     return (
         <div className="container">
             <h1 className="title">{title}</h1>
-            <p className="para">{descr}</p>
+            <p className="para-textarea">{descr}</p>
             <div className="row">
-                {content}
+                <div className="d-flex flex-wrap justify-content-around py-5">
+                <CardsView project={img1} setImg={() => {}}/>
+                </div>
             </div>
         </div>
     )

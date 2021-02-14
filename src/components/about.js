@@ -18,10 +18,10 @@ export default function AboutArea() {
                     </h2>
                     <div className='paragraph py-4 w-75'>
                         <p className='para'>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dolores ipsa porro dolorem ipsam id et rem perferendis debitis officiis?
+                            I am 26. I am a beginner JS-Developer. I prefer to work with React, React-Native, but I am familiar with Angular and Vue at the level of understanding (there is no development experience in these frameworks).
                         </p>
                         <p className='para'>
-                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',
+                            You can see my skills below in the <a href='#portfolio'>portfolio</a> section. There I described in detail all the technologies I use with links to my git repository.
                         </p>
                     </div>
                     <a href='https://dropmefiles.com/rbDu0'>

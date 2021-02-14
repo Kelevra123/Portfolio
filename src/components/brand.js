@@ -33,8 +33,8 @@ export default function BrandArea() {
                         <div className='d-flex flex-row years-area'>
                             <h2 className='p-3 years'>1 </h2>
                             <h2>
-                                <span>Years</span>
-                                <span>Freelance</span>
+                                <span>Year</span>
+                                <span>React</span>
                                 <span>Experience</span>
                             </h2>
                         </div>
